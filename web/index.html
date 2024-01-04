@@ -29,8 +29,68 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>gossip_of_history</title>
+  <title>Gossip Of History</title>
+  <meta name="description" content="Explore history with Gossip Of History! Interactive map for a unique journey through time.">
+  <meta name="keywords" content="discovery of history, interactive map, mobile application, historical information, timeline, detailed data, cultural heritage, user-friendly, explorer app, historical events, discovery experience, map projects">
+  <meta name="copyright" content="Copyright Gossip Of History">
+  <meta name="author" content="Gossip Of History">
+  <meta name="email" content="gossipofhistory@gmail.com">
+  <meta http-equiv="content-language" content="EN">
+  <meta name="Charset" content="UTF-8">
+  <meta name="Distribution" content="Global">
+  <meta name="Rating" content="General">
+  <meta name="Robots" content="INDEX,FOLLOW">
+  <meta name="Abstract" content="Discover history with interactive maps. Explore events, timelines & cultural heritage.">
+  <meta name="Revisit-after" content="1 Day">
   <link rel="manifest" href="manifest.json">
+
+  <style>
+  body {background-color: #212121;}
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border: 15px solid;
+      border-top: 16px solid #FFFFFF;
+      border-right: 16px solid #212121;
+      border-bottom: 16px solid #FFFFFF;
+      border-left: 16px solid #212121;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 
   <script>
     // The value below is injected by flutter build, do not touch.
@@ -40,6 +100,9 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+<div class="loading">
+  <div class="loader"></div>
+</div>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

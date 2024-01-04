@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:gossip_of_history/view_model/clickable_mzpb.dart';
 import 'package:gossip_of_history/view_model/data.dart';
@@ -9,27 +11,29 @@ class MapWidget extends StatelessWidget {
   ClickableMZPB mapZoomPanBehavior;
   late String src;
   int year;
-  List<String> countryList = [];
-  List<String> countryListTr = [];
-  List<String> countryListText = [];
+  List<String?> countryList = [];
+  List<String?> countryListTr = [];
+  List<String?> countryListText = [];
+  List<Color?> countryListColor = [];
   static String selectedCountry = "";
   static String selectedCountryText = "";
   MapLatLng selectedLatLng = MapLatLng(0, 0);
   static int index = -1;
   static int dataYear = -1;
 
-  MapWidget(this.year, this.controller, this.mapZoomPanBehavior,
-      {super.key}) {
+  MapWidget(this.year, this.controller, this.mapZoomPanBehavior, {super.key}) {
     dataYear = year;
     switch (year) {
       case 1900:
         countryList = Data.mapList1900;
         countryListTr = Data.mapList1900tr;
+        countryListColor = Data.mapColorList1900;
         src = "assets/world_1900.json";
         break;
       case 1914:
         countryList = Data.mapList1914;
         countryListTr = Data.mapList1914tr;
+        countryListColor = Data.mapColorList1914;
         src = "assets/world_1914.json";
         break;
     }
@@ -37,8 +41,10 @@ class MapWidget extends StatelessWidget {
       src,
       shapeDataField: "NAME",
       dataCount: countryList.length,
-      dataLabelMapper: (index) => countryListText[index],
-      primaryValueMapper: (index) => countryList[index],
+      dataLabelMapper: (index) => countryListText[index] ?? "",
+      primaryValueMapper: (index) => countryList[index] ?? "",
+      shapeColorValueMapper: (index) =>
+          countryListColor[index] ?? Color.fromRGBO(158, 158, 158, 1.0),
     );
 
     mapZoomPanBehavior.minZoomLevel = 2;
@@ -79,8 +85,8 @@ class MapWidget extends StatelessWidget {
         loadingBuilder: (context) => const CircularProgressIndicator(),
         zoomPanBehavior: mapZoomPanBehavior,
         shapeTooltipBuilder: (context, index) {
-          MapWidget.selectedCountry = countryList[index];
-          MapWidget.selectedCountryText = countryListText[index];
+          MapWidget.selectedCountry = countryList[index]??"";
+          MapWidget.selectedCountryText = countryListText[index]??"";
           MapWidget.index = index;
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -88,7 +94,7 @@ class MapWidget extends StatelessWidget {
               direction: Axis.horizontal,
               children: [
                 Icon(Icons.map, color: Colors.white, size: 16),
-                Text(countryListText[index],
+                Text(countryListText[index]??"",
                     style: const TextStyle(color: Colors.white)),
               ],
             ),

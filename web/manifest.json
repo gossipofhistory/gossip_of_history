@@ -1,11 +1,11 @@
 {
-    "name": "gossip_of_history",
-    "short_name": "gossip_of_history",
+    "name": "Gossip Of History",
+    "short_name": "Gossip Of History",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Gossip Of History",
+    "background_color": "#C7AB81",
+    "theme_color": "#C7AB81",
+    "description": "Explore history with Gossip Of History! Interactive map for a unique journey through time.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

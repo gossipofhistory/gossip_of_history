@@ -63,11 +63,11 @@ class _MainViewState extends State<MainView> {
       children: [
         CarouselSlider(
           items: [
-            Card(elevation:16,child: Image.asset("assets/slider1.jpg")),
-            Card(elevation:16,child: Image.asset("assets/slider2.jpg")),
-            Card(elevation:16,child: Image.asset("assets/slider3.jpg")),
-            Card(elevation:16,child: Image.asset("assets/slider4.jpg")),
-            Card(elevation:16,child: Image.asset("assets/slider5.jpg")),
+            Card(elevation: 16, child: Image.asset("assets/slider1.jpg"),color: Colors.transparent),
+            Card(elevation: 16, child: Image.asset("assets/slider2.jpg"),color: Colors.transparent),
+            Card(elevation: 16, child: Image.asset("assets/slider3.jpg"),color: Colors.transparent),
+            Card(elevation: 16, child: Image.asset("assets/slider4.jpg"),color: Colors.transparent),
+            Card(elevation: 16, child: Image.asset("assets/slider5.jpg"),color: Colors.transparent),
           ],
           options: CarouselOptions(
             height: 400,

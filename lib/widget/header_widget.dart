@@ -47,26 +47,30 @@ class _HeaderWidgetState extends State<HeaderWidget> {
       ),
       Container(
         color: Color(0xff444444),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Wrap(
-                alignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: [
-                  textButton(widget.menu[0], "/"),
-                  textButton(widget.menu[1], "/map"),
-                  textButton(widget.menu[2], "/about"),
-                  textButton(widget.menu[4], "/source"),
-                  textButton(widget.menu[5],
-                      "https://firebasestorage.googleapis.com/v0/b/gossip-of-history.appspot.com/o/eguvenlik.pdf?alt=media&token=32ce367b-645b-4152-9462-ac823dc9151f"),
-                  textButton(widget.menu[3], "/contact"),
-                  instagramButton(),
-                ],
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+
               ),
+            ),
+            Wrap(
+              direction: Axis.horizontal,
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                textButton(widget.menu[0], "/"),
+                textButton(widget.menu[1], "/map"),
+                textButton(widget.menu[2], "/about"),
+                textButton(widget.menu[4], "/source"),
+                textButton(widget.menu[5],
+                    "https://firebasestorage.googleapis.com/v0/b/gossip-of-history.appspot.com/o/eguvenlik.pdf?alt=media&token=32ce367b-645b-4152-9462-ac823dc9151f"),
+                textButton(widget.menu[3], "/contact"),
+                instagramButton(),
+              ],
             ),
           ],
         ),

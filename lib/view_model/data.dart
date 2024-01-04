@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class Data {
   static List<String> mapList1900 = [
     "Austria Hungary",
@@ -16,6 +18,24 @@ class Data {
     "Sweden–Norway",
     "Switzerland",
     "United Kingdom of Great Britain and Ireland"
+  ];
+  static List<Color> mapColorList1900=[
+    Color.fromRGBO(117, 171, 161, 1.0), // Austria Hungary
+    Color.fromRGBO(206, 163, 217, 1.0), // Belgium
+    Color.fromRGBO(92, 215, 187, 1.0),  // Bulgaria
+    Color.fromRGBO(233, 184, 86, 1.0),  // France
+    Color.fromRGBO(243, 122, 131, 1.0), // Germany
+    Color.fromRGBO(136, 154, 156, 1.0), // Greece
+    Color.fromRGBO(244, 238, 30, 1.0),  // Italy
+    Color.fromRGBO(128, 0, 128, 1),     // Netherlands
+    Color.fromRGBO(245, 123, 112, 1.0), // Ottoman Empire
+    Color.fromRGBO(255, 165, 0, 1),     // Portugal
+    Color.fromRGBO(183, 215, 123, 1.0), // Russian Empire
+    Color.fromRGBO(136, 183, 102, 1.0), // Serbia
+    Color.fromRGBO(255, 0, 255, 1),     // Spain
+    Color.fromRGBO(0, 128, 255, 1),     // Sweden–Norway
+    Color.fromRGBO(255, 128, 128, 1),   // Switzerland
+    Color.fromRGBO(194, 162, 88, 1.0), // United Kingdom of Great Britain and Ireland
   ];
   static List<String> mapList1914 = [
     "Austro-Hungarian Empire",
@@ -36,6 +56,27 @@ class Data {
     "Switzerland",
     "United Kingdom of Great Britain and Ireland"
   ];
+  static List<Color> mapColorList1914=[
+    Color.fromRGBO(117, 171, 161, 1.0), // Austro-Hungarian Empire
+    Color.fromRGBO(206, 163, 217, 1.0), // Belgium
+    Color.fromRGBO(92, 215, 187, 1.0),  // Bulgaria
+    Color.fromRGBO(233, 184, 86, 1.0),  // France
+    Color.fromRGBO(243, 122, 131, 1.0), // Germany Empire
+    Color.fromRGBO(136, 154, 156, 1.0), // Greece
+    Color.fromRGBO(244, 238, 30, 1.0),  // Kingdom of Italy
+    Color.fromRGBO(128, 0, 128, 1),     // Netherlands
+    Color.fromRGBO(77, 173, 48, 1.0),     // Norway
+    Color.fromRGBO(245, 123, 112, 1.0), // Ottoman Empire
+    Color.fromRGBO(255, 165, 0, 1),     // Portugal
+    Color.fromRGBO(183, 215, 123, 1.0), // Russian Empire
+    Color.fromRGBO(136, 183, 102, 1.0), // Serbia
+    Color.fromRGBO(255, 0, 255, 1),     // Spain
+    Color.fromRGBO(81, 166, 152, 1.0),     // Sweden
+    Color.fromRGBO(255, 128, 128, 1),   // Switzerland
+    Color.fromRGBO(194, 162, 88, 1.0), // United Kingdom of Great Britain and Ireland
+  ];
+
+
   static List<String> mapList1920 = [
     "Armenia",
     "Austria",
