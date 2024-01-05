@@ -37,18 +37,16 @@ class MapWidget extends StatelessWidget {
         src = "assets/world_1914.json";
         break;
     }
-    shapeSource = MapShapeSource.asset(
-      src,
-      shapeDataField: "NAME",
-      dataCount: countryList.length,
-      dataLabelMapper: (index) => countryListText[index] ?? "",
-      primaryValueMapper: (index) => countryList[index] ?? "",
-      shapeColorValueMapper: (index) =>
-          countryListColor[index] ?? Color.fromRGBO(158, 158, 158, 1.0),
-    );
+    shapeSource = MapShapeSource.asset(src,
+        shapeDataField: "NAME",
+        dataCount: countryList.length,
+        dataLabelMapper: (index) => countryListText[index] ?? "",
+        primaryValueMapper: (index) => countryList[index] ?? "",
+        shapeColorValueMapper: (index) =>
+            countryListColor[index] ?? Color.fromRGBO(158, 158, 158, 1.0));
 
     mapZoomPanBehavior.minZoomLevel = 2;
-    mapZoomPanBehavior.maxZoomLevel = 10;
+    mapZoomPanBehavior.maxZoomLevel = 20;
     mapZoomPanBehavior.zoomLevel = 3;
     mapZoomPanBehavior.focalLatLng = MapLatLng(50, 0);
     mapZoomPanBehavior.enableMouseWheelZooming = true;
@@ -85,8 +83,8 @@ class MapWidget extends StatelessWidget {
         loadingBuilder: (context) => const CircularProgressIndicator(),
         zoomPanBehavior: mapZoomPanBehavior,
         shapeTooltipBuilder: (context, index) {
-          MapWidget.selectedCountry = countryList[index]??"";
-          MapWidget.selectedCountryText = countryListText[index]??"";
+          MapWidget.selectedCountry = countryList[index] ?? "";
+          MapWidget.selectedCountryText = countryListText[index] ?? "";
           MapWidget.index = index;
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -94,7 +92,7 @@ class MapWidget extends StatelessWidget {
               direction: Axis.horizontal,
               children: [
                 Icon(Icons.map, color: Colors.white, size: 16),
-                Text(countryListText[index]??"",
+                Text(countryListText[index] ?? "",
                     style: const TextStyle(color: Colors.white)),
               ],
             ),

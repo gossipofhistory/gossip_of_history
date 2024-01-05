@@ -67,7 +67,7 @@ class _MapViewState extends State<MapView> {
       child: SfSlider(
         value: dateValue,
         min: DateTime(1900),
-        max: DateTime(1919),
+        max: DateTime(1918),
         showLabels: true,
         dateFormat: DateFormat.y(),
         showTicks: true,
