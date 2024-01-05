@@ -51,10 +51,10 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           alignment: Alignment.center,
           children: [
             Container(
+              height: 48,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-
               ),
             ),
             Wrap(
